@@ -26,7 +26,7 @@
                   
                   <li><a class="active"th:href="@{/}">Home</a></li>
                   <li>
-                      <a href="productsPage">Shop</a>
+                      <a th:href="@{productsPage}">Shop</a>
                       <ul class="dropdown">
                           <li><a th:href="@{/product/origin/ethiopia}"}>Ethiopia</a></li>
                           <li><a th:href="@{/product/origin/kenya}">Kenya</a></li>
@@ -54,6 +54,23 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center mb-5">Our Products</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-5">
+            <form action="#" method="get" th:action="@{/productsPage}">
+                <select name="origin" class="form-control">
+                    <option value="">All Origins</option>
+                    <option value="ETHIOPIA">Ethiopia</option>
+                    <option value="KENYA" >Kenya</option>
+                    <option value="BRAZIL" >Brazil</option>
+                    <option value="COLOMBIA" >Colombia</option>
+                    <option value="CENTRALAMERICA">Central America</option>
+                </select>
+                <input type="hidden" name="defaultOrigin"/>
+                <button type="submit" class="btn btn-primary mt-3 btn-outline-secondary" >Filter</button>
+            </form>
+
             </div>
         </div>
         <div class="row">
